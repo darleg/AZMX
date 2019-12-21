@@ -10,24 +10,26 @@ int main() {
     while(1) {
         // enable
         sensor -> enable();
+
         // read id
-        led1 = !led1;
-        wait_ms(200);
         sensor -> readId(&id);
         AZ.printf("ID: %d\r\n", id);
-        // get humidity
-        led2 = !led2;
+        led1 = !led1;
         wait_ms(200);
+
+        // get humidity
         sensor -> getHumidity(&humidity);
         AZ.printf("Humidity: %.2f\r\n", humidity);
+        led2 = !led2;
+        wait_ms(200);
         RB = humidity;
         LEDB = RB/100;
     
-        // get temperature
-        led3 = !led3;
-        wait_ms(200);
+        // get temperature 
         sensor -> getTemperature(&temperature);
         AZ.printf("Temperature: %.2f\r\n", temperature);
+        led3 = !led3;
+        wait_ms(200);
         RR = temperature;
         LEDR = RR/100;
     
