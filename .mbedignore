@@ -1,0 +1,15 @@
+libraries/devkit-sdk/AZ3166/jenkins/*
+libraries/devkit-sdk/AZ3166/src/bootloader/*
+libraries/devkit-sdk/AZ3166/src/libraries/Audio/*
+libraries/devkit-sdk/AZ3166/src/libraries/AudioV2/examples/*
+libraries/devkit-sdk/AZ3166/src/libraries/AzureIoT/examples/*
+libraries/devkit-sdk/AZ3166/src/libraries/FileSystem/examples/*
+libraries/devkit-sdk/AZ3166/src/libraries/MQTT/examples/*
+libraries/devkit-sdk/AZ3166/src/libraries/Sensors/examples/*
+libraries/devkit-sdk/AZ3166/src/libraries/WebSocket/examples/*
+libraries/devkit-sdk/AZ3166/src/libraries/WiFi/examples/*
+libraries/devkit-sdk/AZ3166/src/system/*
+libraries/devkit-sdk/AZ3166/src/variants/*
+libraries/devkit-sdk/AZ3166/tests/*
+libraries/devkit-sdk/AZ3166/tools/*
+
