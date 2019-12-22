@@ -17,4 +17,4 @@ float humidity = 0;
 float temperature = 0;
 unsigned char id;
 
-MbedSerial AZ(PA_11, PA_12); // tx, rx
+Serial AZ(PA_11, PA_12); // tx, rx
