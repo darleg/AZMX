@@ -1,5 +1,5 @@
 #include "mbed.h"
-#include "HTS221Sensor.h"
+#include "./Sensors/HTS221Sensor.h"
 
 DigitalOut led1(LED1);
 DigitalOut led2(LED2);
