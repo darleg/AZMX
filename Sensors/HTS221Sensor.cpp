@@ -41,7 +41,7 @@
 #include "mbed.h"
 #include "INTERFACES/DevI2C.h"
 #include "HTS221Sensor.h"
-#include "utility/HTS221_driver.h"
+#include "drivers/HTS221_driver.h"
 
 
 /* Class Implementation ------------------------------------------------------*/

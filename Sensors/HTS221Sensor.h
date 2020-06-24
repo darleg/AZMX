@@ -45,7 +45,7 @@
 /* Includes ------------------------------------------------------------------*/
 
 #include "INTERFACES/DevI2C.h"
-#include "utility/HTS221_driver.h"
+#include "drivers/HTS221_driver.h"
 #include "INTERFACES/Sensors/HumiditySensor.h"
 #include "INTERFACES/Sensors/TempSensor.h"
 
