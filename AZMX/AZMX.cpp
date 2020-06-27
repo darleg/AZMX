@@ -3,22 +3,25 @@
 int main() {
     AZ.baud(115200);
     i2c = new DevI2C(D14, D15);
-    sensor = new HTS221Sensor(*i2c);
+    HTSensor = new HTS221Sensor(*i2c);
+    LPSensor = new LPS22HBSensor(*i2c);
+    
     // init the sensor
-    sensor -> init(NULL);
+    HTSensor -> init(NULL);
+    LPSensor -> init(NULL);
 
     while(1) {
         // enable
-        sensor -> enable();
+        HTSensor -> enable();
 
         // read id
-        sensor -> readId(&id);
+        HTSensor -> readId(&id);
         AZ.printf("ID: %d\r\n", id);
         led1 = !led1;
         wait_ms(200);
 
         // get humidity
-        sensor -> getHumidity(&humidity);
+        HTSensor -> getHumidity(&humidity);
         AZ.printf("Humidity: %.2f\r\n", humidity);
         led2 = !led2;
         wait_ms(200);
@@ -26,17 +29,23 @@ int main() {
         LEDB = RB/100;
     
         // get temperature 
-        sensor -> getTemperature(&temperature);
+        HTSensor -> getTemperature(&temperature);
         AZ.printf("Temperature: %.2f\r\n", temperature);
         led3 = !led3;
         wait_ms(200);
         RR = temperature;
         LEDR = RR/100;
+
+        // get pressure
+        LPSensor -> getPressure(&pressure);
+        AZ.printf("Pressure: %.2f\r\n", pressure);
     
         // disable the sensor
-        sensor -> disable();
+        HTSensor -> disable();
+        
         // reset
-        sensor -> reset();
+        HTSensor -> reset();
+        
         wait(5);
     }
 }
