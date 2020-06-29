@@ -5,10 +5,16 @@ int main() {
     i2c = new DevI2C(D14, D15);
     HTSensor = new HTS221Sensor(*i2c);
     LPSensor = new LPS22HBSensor(*i2c);
+    DispOled = new Display();
+
     
     // init the sensor
     HTSensor -> init(NULL);
     LPSensor -> init(NULL);
+    // OLED Display
+    DispOled -> init();
+    DispOled -> DisplayOn();
+    DispOled -> ShowString("Hi there");
 
     while(1) {
         // enable

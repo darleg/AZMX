@@ -1,6 +1,7 @@
 #include "mbed.h"
 #include "./Sensors/HTS221Sensor.h"
 #include "./Sensors/LPS22HBSensor.h"
+#include "Display.h"
 
 DigitalOut led1(LED1);
 DigitalOut led2(LED2);
@@ -15,6 +16,8 @@ float RR, RG, RB;
 DevI2C *i2c;
 HTS221Sensor *HTSensor;
 LPS22HBSensor *LPSensor;
+Display *DispOled;
+
 float humidity = 0;
 float temperature = 0;
 float pressure = 0;
