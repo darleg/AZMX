@@ -13,13 +13,13 @@ int main() {
     LPSensor -> init(NULL);
     // OLED Display
     DispOled -> init();
-    DispOled -> DisplayOn();
+    
     DispOled -> ShowString("Hi there");
 
     while(1) {
         // enable
         HTSensor -> enable();
-
+        
         // read id
         HTSensor -> readId(&id);
         AZ.printf("ID: %d\r\n", id);
@@ -45,13 +45,14 @@ int main() {
         // get pressure
         LPSensor -> getPressure(&pressure);
         AZ.printf("Pressure: %.2f\r\n", pressure);
-    
+        
         // disable the sensor
         HTSensor -> disable();
         
         // reset
         HTSensor -> reset();
-        
+        DispOled -> DisplayOn();
         wait(5);
+        DispOled -> DisplayOff();
     }
 }
