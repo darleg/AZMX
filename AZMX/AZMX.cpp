@@ -13,8 +13,9 @@ int main() {
     LPSensor -> init(NULL);
     // OLED Display
     DispOled -> init();
-    
-    DispOled -> ShowString("Hi there");
+    char oledbuf[100];
+    sprintf(oledbuf, "Hi there");
+    DispOled -> ShowString(oledbuf);
 
     while(1) {
         // enable
