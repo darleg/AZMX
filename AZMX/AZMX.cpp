@@ -14,8 +14,6 @@ int main() {
     // OLED Display
     DispOled -> init();
     char oledbuf[100];
-    sprintf(oledbuf, "Hi there");
-    DispOled -> ShowString(oledbuf);
 
     while(1) {
         // enable
@@ -34,7 +32,7 @@ int main() {
         wait_ms(200);
         RB = humidity;
         LEDB = RB/100;
-    
+        
         // get temperature 
         HTSensor -> getTemperature(&temperature);
         AZ.printf("Temperature: %.2f\r\n", temperature);
@@ -46,7 +44,11 @@ int main() {
         // get pressure
         LPSensor -> getPressure(&pressure);
         AZ.printf("Pressure: %.2f\r\n", pressure);
-        
+
+        sprintf(oledbuf, "Hum: %.2\nTemp: %.2\nPress: %.2f", humidity, temperature, pressure);
+
+        DispOled -> ShowString(2, 1, oledbuf);
+       
         // disable the sensor
         HTSensor -> disable();
         

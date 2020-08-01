@@ -17,7 +17,7 @@ void Display::DisplayOn() {
 void Display::DisplayOff() {
     OLED_Display_Off();
 }
-void Display::ShowString(char *p) {
-    
-    OLED_ShowString(2, 2, p);
+
+void Display::ShowString(char *p) {   
+    OLED_ShowString(2, 1, p);
 }
