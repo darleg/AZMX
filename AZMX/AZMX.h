@@ -1,6 +1,6 @@
 #include "mbed.h"
 #include "./OnBoard/Classes/HTS221Sensor.h"
-#include "./OnBoard/ClassesLPS22HBSensor.h"
+#include "./OnBoard/Classes/LPS22HBSensor.h"
 #include "Display.h"
 
 DigitalOut led1(LED1);

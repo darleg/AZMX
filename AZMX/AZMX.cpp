@@ -47,7 +47,7 @@ int main() {
 
         sprintf(oledbuf, "Hum: %.2\nTemp: %.2\nPress: %.2f", humidity, temperature, pressure);
 
-        DispOled -> ShowString(2, 1, oledbuf);
+        DispOled -> ShowString(oledbuf);
        
         // disable the sensor
         HTSensor -> disable();
