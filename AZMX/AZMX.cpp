@@ -12,7 +12,9 @@ int main() {
     HTSensor -> init(NULL);
     LPSensor -> init(NULL);
     // OLED Display
-    DispOled -> init();
+    DispOled -> init(); 
+    u8 col;
+    u8 row;
     char oledbuf[100];
 
     while(1) {
@@ -45,9 +47,10 @@ int main() {
         LPSensor -> getPressure(&pressure);
         AZ.printf("Pressure: %.2f\r\n", pressure);
 
-        sprintf(oledbuf, "Hum: %.2\nTemp: %.2\nPress: %.2f", humidity, temperature, pressure);
-
-        DispOled -> ShowString(oledbuf);
+        sprintf(oledbuf, "Hum: %.2f\nTemp: %.2f\nPress: %.2f", humidity, temperature, pressure);
+        col = 1;
+        row = 2;
+        DispOled -> ShowString(col, row, oledbuf);
        
         // disable the sensor
         HTSensor -> disable();

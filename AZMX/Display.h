@@ -9,5 +9,5 @@ public:
     void clear();
     void DisplayOn();
     void DisplayOff();
-    void ShowString(char *p);
+    void ShowString(u8 x, u8 y, char *p);
 };
